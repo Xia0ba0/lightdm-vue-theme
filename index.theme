@@ -1,0 +1,6 @@
+[theme]
+name=lightdm-vuetheme-material
+description=Yet Aonther lightdm-webkit2-greeter theme writen in vue
+engine=lightdm-webkit2-greeter
+url=index.html
+session=xfce
