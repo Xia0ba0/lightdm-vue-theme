@@ -3,7 +3,7 @@ import App from './App'
 import router from './router'
 
 // mock the lightdm object
-import 'mock'
+import './mock'
 
 Vue.config.productionTip = false
 
