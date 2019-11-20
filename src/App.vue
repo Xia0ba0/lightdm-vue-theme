@@ -15,7 +15,7 @@ export default {
     }
   },
   methods: {
-    // it will cause some bug when you trigger the two effect at
+    // it will cause some visual bugs when you trigger the two effect at
     // the same time, and it is very strange if give a transition to blur
 
     /* listen on blur event and emited by child component */
@@ -55,7 +55,7 @@ export default {
 
 /* for the scale effect */
 .bg-scale {
-  /* prevent white edge and add transition*/
+  /* prevent white edge after bluring and add transition*/
   transition: all 0.3s ease-in-out; 
   transform: scale(1.2);
 }
