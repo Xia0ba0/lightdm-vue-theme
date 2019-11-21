@@ -1,6 +1,6 @@
 <template>
 <div class="test">
-  <h1>{{msg}}</h1>
+  <h1>{{username}}</h1>
   <User />
 </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   components:{
     User
   },
-  name: 'HelloWorld',
+  name: 'Greeter',  
   mounted: function(){
     setTimeout(()=>{
       this.$emit('blur')
@@ -21,6 +21,11 @@ export default {
   data () {
     return {
       msg: lightdm.users[0].name
+    }
+  },
+  computed:{
+    username(){
+      return this.$store.state.currentUser.name
     }
   }
 }

@@ -1,9 +1,10 @@
+// mock the lightdm object
+import './mock'
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-// mock the lightdm object
-import './mock'
+import store from './store'
 
 // Muse-ui
 import MuseUI from 'muse-ui'
@@ -20,5 +21,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

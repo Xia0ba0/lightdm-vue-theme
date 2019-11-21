@@ -62,7 +62,7 @@ if (!('lightdm' in window)) {
             name: "brucew",
             real_name: "Batman",
             display_name: "Bruce Wayne",
-            image: "http://uk.omg.li/VDHr/OW-blog-Batman.jpg",
+            image: "",
             language: "en_US",
             layout: null,
             session: null,

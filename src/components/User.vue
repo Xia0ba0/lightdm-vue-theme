@@ -1,22 +1,10 @@
 <template>
   <div id="users" class="user">
-    <mu-icon
-      @click="changeUser"
-      class="swicher"
-      size="150"
-      value="chevron_left"
-      color="red"
-    ></mu-icon>
-    <mu-avatar :size="avatarSize" class="avatar">
+    <mu-icon @click="leftChange" class="swicher" size="150" value="chevron_left" color="red"></mu-icon>
+    <mu-avatar size="200" class="avatar">
       <img :src="currentUser.image" />
     </mu-avatar>
-    <mu-icon
-      @click="changeUser"
-      class="swicher"
-      size="150"
-      value="chevron_right"
-      color="red"
-    ></mu-icon>
+    <mu-icon @click="rightChange" class="swicher" size="150" value="chevron_right" color="red"></mu-icon>
   </div>
 </template>
 
@@ -25,19 +13,25 @@ export default {
   name: "User",
   data: () => {
     return {
-      users: lightdm.users,
-      currentUser: lightdm.users[0],
       currentIndex: 0,
-      userNum: lightdm.num_users,
-
-      avatarSize: 200
-    };
+      userNum: lightdm.num_users
+    }
+  },
+  computed:{
+    currentUser(){
+      return this.$store.state.currentUser
+    }
   },
   methods: {
-    changeUser() {
-      console.log("change!!!")
-      this.currentIndex = (this.Index + 1 + this.userNum) % this.userNum;
-      this.currentUser = this.users[this.currentIndex];
+    changeUser(num) {
+      this.currentIndex = (this.currentIndex + num +  this.userNum) % this.userNum
+      this.$store.commit('changeUser',lightdm.users[this.currentIndex])
+    },
+    leftChange() {
+      this.changeUser(-1)
+    },
+    rightChange(){
+      this.changeUser(1)
     }
   }
 };
