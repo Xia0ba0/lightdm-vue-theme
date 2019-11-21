@@ -1,6 +1,6 @@
 <template>
   <div class="loginBox">
-      <input type="password">
+      <input ref="input" type="password" @keyup.enter="login" autofocus />
   </div>
 </template>
 <script>
@@ -10,6 +10,11 @@ export default {
     return {
       password: ""
     };
+  },
+  methods:{
+      login(){
+          alert("hello "+ this.$store.state.currentUser.name)
+      }
   }
 };
 </script>
