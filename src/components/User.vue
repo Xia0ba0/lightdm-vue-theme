@@ -1,10 +1,15 @@
 <template>
-  <div id="users" class="user">
-    <mu-icon @click="leftChange" class="swicher" size="150" value="chevron_left" color="red"></mu-icon>
-    <mu-avatar size="200" class="avatar">
-      <img :src="currentUser.image" />
-    </mu-avatar>
-    <mu-icon @click="rightChange" class="swicher" size="150" value="chevron_right" color="red"></mu-icon>
+  <div class="user">
+    <div class="user-avatar">
+      <mu-icon @click="leftChange" class="swicher" size="150" value="chevron_left" color="red"></mu-icon>
+      <mu-avatar size="200" class="avatar">
+        <img :src="currentUser.image" />
+      </mu-avatar>
+      <mu-icon @click="rightChange" class="swicher" size="150" value="chevron_right" color="red"></mu-icon>
+    </div>
+    <div class="user-name">
+      <h1>{{currentUser.name}}</h1>
+    </div>
   </div>
 </template>
 
@@ -15,29 +20,30 @@ export default {
     return {
       currentIndex: 0,
       userNum: lightdm.num_users
-    }
+    };
   },
-  computed:{
-    currentUser(){
-      return this.$store.state.currentUser
+  computed: {
+    currentUser() {
+      return this.$store.state.currentUser;
     }
   },
   methods: {
     changeUser(num) {
-      this.currentIndex = (this.currentIndex + num +  this.userNum) % this.userNum
-      this.$store.commit('changeUser',lightdm.users[this.currentIndex])
+      this.currentIndex =
+        (this.currentIndex + num + this.userNum) % this.userNum;
+      this.$store.commit("changeUser", lightdm.users[this.currentIndex]);
     },
     leftChange() {
-      this.changeUser(-1)
+      this.changeUser(-1);
     },
-    rightChange(){
-      this.changeUser(1)
+    rightChange() {
+      this.changeUser(1);
     }
   }
 };
 </script>
 <style scoped>
-.user {
+.user-avatar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,5 +58,10 @@ export default {
 .swicher {
   margin: 0 5%;
   cursor: pointer;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>

@@ -59,20 +59,20 @@ if (!('lightdm' in window)) {
             logged_in: false
         },
         {
-            name: "brucew",
+            name: "superhero",
             real_name: "Batman",
             display_name: "Bruce Wayne",
-            image: "",
+            image: "http://www.qqkuyou.com/uploads/7ef7b735e8258b5c/5.jpg",
             language: "en_US",
             layout: null,
             session: null,
             logged_in: false
         },
         {
-            name: "peterp",
+            name: "notgoback",
             real_name:"Spiderman",
             display_name: "Peter Parker",
-            image: "",
+            image: "http://1t.click/bkzy",
             language: "en_US",
             layout: null,
             session: null,
