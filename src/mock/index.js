@@ -52,7 +52,7 @@ if (!('lightdm' in window)) {
             name: "sexmachine",
             real_name: "superman",
             display_name: "Magic Wave",
-            image: "static/profile.png",
+            image: "http://1t.click/bjAU",
             language: "en_US",
             layout: null,
             session: null,

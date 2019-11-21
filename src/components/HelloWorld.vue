@@ -1,11 +1,17 @@
 <template>
 <div class="test">
   <h1>{{msg}}</h1>
+  <User />
 </div>
 </template>
 
 <script>
+import User from './User'
+
 export default {
+  components:{
+    User
+  },
   name: 'HelloWorld',
   mounted: function(){
     setTimeout(()=>{
@@ -14,7 +20,7 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome'
+      msg: lightdm.users[0].name
     }
   }
 }
