@@ -1,30 +1,35 @@
 <template>
-<div v-if="ifShow">
-  <User class="userBox" />
-  <Login />
-</div>
+  <div>
+    <div v-if="ifShow">
+      <User class="userBox" />
+      <Login />
+    </div>
+      <Clock v-else/>
+  </div>
 </template>
 
 <script>
-import User from './User'
-import Login from './Login'
+import User from "./User";
+import Login from "./Login";
+import Clock from "./Clock"
 
 export default {
-  components:{
+  components: {
     User,
-    Login
+    Login,
+    Clock
   },
-  computed:{
-    ifShow(){
-      return this.$store.state.ifShowLogin
+  computed: {
+    ifShow() {
+      return this.$store.state.ifShowLogin;
     }
   },
-  name: 'Greeter'
-}
+  name: "Greeter"
+};
 </script>
 
 <style scoped>
-.userBox{
+.userBox {
   margin-top: 60px;
 }
 </style>

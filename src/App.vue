@@ -9,7 +9,12 @@
 export default {
   name: "App",
   mounted() {
-    document.οnkeydοwn = this.showLoginInfo;
+    let that = this;
+    document.onkeyup = function() {
+      if (!that.$store.state.ifShow) {
+        that.showLoginInfo();
+      }
+    };
   },
   data: () => {
     return {
